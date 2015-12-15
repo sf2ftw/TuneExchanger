@@ -77,24 +77,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let description = tunebook["contentDescription"].string
                 print("title = \(title!), description = \(description!)")
                 //finished importing title and description of tunebook
-                let tunes = tunebook["tune"].array
-                for tune in tunes! {
-                    let tuneTitle = tune["title"].string
-                    print("Tune: \(tuneTitle!)")
-                } //finished importing tunes directly in tunebook
-                let sets = tunebook["sets"].array
-                for set in sets! {
-                    let setTitle = set["title"].string
-                    print("setTitle = \(setTitle!)")
-                    let tunesInSet = set["tune"].array
-                    for tuneInSet in tunesInSet! {
-                        let tuneInSetTitle = tuneInSet["title"].string
-                        print("tuneInSetTitle = \(tuneInSetTitle!)")
-                    } //end tuneInSet loop
-                }//end set loop
+                if let tunes = tunebook["tune"].array {
+                    for tune in tunes {
+                        let tuneTitle = tune["title"].string
+                        print("Tune: \(tuneTitle!)")
+                    } //finished importing tunes directly in tunebook
+                }// end import if there are no tunes in tunebook
+                if let sets = tunebook["sets"].array {
+                    for set in sets {
+                        let setTitle = set["title"].string
+                        print("setTitle = \(setTitle!)")
+                        let tunesInSet = set["tune"].array
+                        for tuneInSet in tunesInSet! {
+                            let tuneInSetTitle = tuneInSet["title"].string
+                            print("tuneInSetTitle = \(tuneInSetTitle!)")
+                        } //end tuneInSet loop
+                    }//end sets import loop
+                }//end import if there are no sets in tunebook
+                }
             }//end of tunebook loop
         }
-    }
+    
             
 //        do {
 ////            let jsonArray = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: .AllowFragments) as! NSArray
