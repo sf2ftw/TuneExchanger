@@ -1,29 +1,56 @@
- [
-  { "tunebook":[
-                {
-                "contentDescription": "Tunebook1",
-                "title": "Book1",
-                "tune":[
-                        {
-                        "title":"Drowsy Maggie"
-                        },
-                        {
-                        "title":"Bobs Reel"
-                        },
-                        {
-                        "title":"Jig of Slurs"
-                        }
-                        ]
-                },
-                {
-                "contentDescription": "Tunebook2",
-                "title": "Book2",
-                "tune":[
-                        {
-                        "title":"Big Fuds Reel"
-                        }
-                        ]
-                }
-                ]
-  }
-]
+{
+    "tunebook": [{
+                 "contentDescription": "Tunebook1",
+                 "title": "Book1",
+                 "tune": [{
+                          "title": "Drowsy Maggie"
+                          }, {
+                          "title": "Bobs Reel"
+                          }, {
+                          "title": "Jig of Slurs"
+                          }],
+                 "sets": [
+                          {
+                          "title": "Tunebook Set 1",
+                          "tune": [{
+                                   "title": "tune 1"
+                                   },{
+                                   "title": "tune 2"
+                                   },{
+                                   "title": "tune 3"
+                                   }]
+                          },{
+                          "title": "Tunebook Set 2",
+                          "tune": [{
+                                   "title": "tune 4"
+                                   },{
+                                   "title": "tune 5"
+                                   },{
+                                   "title": "tune 6"
+                                   }]
+                          }]
+                 }, {
+                 "contentDescription": "Tunebook2",
+                 "title": "Book2",
+                 "tune": [{
+                          "title": "Big Fuds Reel"
+                          }],
+                 "set": [
+                         {
+                         "title": "Tunebook2 set 1",
+                         "tune": [{
+                                  "title": "tune 1"
+                                  },{
+                                  "title": "tune 2"
+                                  },{
+                                  "title": "tune 3"
+                                  }]
+                         },{
+                         "title": "Tunebook2 set 2",
+                         "tune": [{
+                                  "title": "tune 1"
+                                  },{
+                                  "title": "tune 2"
+                                  }]
+                         }]
+                 }]}

@@ -71,15 +71,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let jsonURL = NSBundle.mainBundle().URLForResource("seedTunebooks", withExtension: "json")
         let jsonData = NSData(contentsOfURL: jsonURL!)
         let json:JSON = JSON(data: jsonData!)
-        var tunebookIndex=0
-        for tuneObject in json {
-            let tunebook = tuneObject["tunebook"].arrayValue
-            print(tunebook.tunebookIndex.["title"].stringValue)
-            tunebookIndex++
-            
+        if let tunebookArray = json["tunebook"].array {  //get the tunebookArray
+            for tunebook in tunebookArray {
+                let title = tunebook["title"].string
+                let description = tunebook["contentDescription"].string
+                print("title = \(title!), description = \(description!)")
+                //finished importing title and description of tunebook
+                let tunes = tunebook["tune"].array
+                for tune in tunes! {
+                    let tuneTitle = tune["title"].string
+                    print("Tune: \(tuneTitle!)")
+                } //finished importing tunes directly in tunebook
+                let sets = tunebook["set"].array
+                for set in sets! {
+                    let setTitle = set["title"].string
+                    print("setTitle = \(setTitle)")
+                    let tunesInSet = tunebook[set.string!]["tune"].array
+                    for tuneInSet in tunesInSet! {
+                        let tuneInSetTitle = tuneInSet["title"].string
+                        print("tuneInSetTitle = \(tuneInSetTitle)")
+                    } //end tuneInSet loop
+                }//end set loop
+  
+            }
         }
-        
-        
+    } // end tunebook loop
+            
 //        do {
 ////            let jsonArray = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: .AllowFragments) as! NSArray
 ////            let entity = NSEntityDescription.entityForName("Tunebook", inManagedObjectContext: coreDataStack.context)
@@ -108,7 +125,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        } catch let error as NSError {
 //            print("Error importing Tunebook: \(error)")
 //        }
-    }
+//    }
 
 
 func importJSONTuneSeedDataIfNeeded() {
