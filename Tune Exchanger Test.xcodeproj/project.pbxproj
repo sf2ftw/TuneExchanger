@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE0B93A31C20353100808BC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0B93A21C20353100808BC9 /* AppDelegate.swift */; };
+		DE0B93A51C20353100808BC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0B93A41C20353100808BC9 /* ViewController.swift */; };
+		DE0B93A81C20353200808BC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0B93A61C20353200808BC9 /* Main.storyboard */; };
+		DE0B93AA1C20353200808BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE0B93A91C20353200808BC9 /* Assets.xcassets */; };
+		DE0B93AD1C20353200808BC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0B93AB1C20353200808BC9 /* LaunchScreen.storyboard */; };
+		DE0B93B81C20353200808BC9 /* Tune_Exchanger_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0B93B71C20353200808BC9 /* Tune_Exchanger_TestTests.swift */; };
+		DE0B93C31C20353200808BC9 /* Tune_Exchanger_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0B93C21C20353200808BC9 /* Tune_Exchanger_TestUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE0B93B41C20353200808BC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE0B93971C20353100808BC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE0B939E1C20353100808BC9;
+			remoteInfo = "Tune Exchanger Test";
+		};
+		DE0B93BF1C20353200808BC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE0B93971C20353100808BC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE0B939E1C20353100808BC9;
+			remoteInfo = "Tune Exchanger Test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE0B939F1C20353100808BC9 /* Tune Exchanger Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tune Exchanger Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0B93A21C20353100808BC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE0B93A41C20353100808BC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE0B93A71C20353200808BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE0B93A91C20353200808BC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE0B93AC1C20353200808BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE0B93AE1C20353200808BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE0B93B31C20353200808BC9 /* Tune Exchanger TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tune Exchanger TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0B93B71C20353200808BC9 /* Tune_Exchanger_TestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tune_Exchanger_TestTests.swift; sourceTree = "<group>"; };
+		DE0B93B91C20353200808BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE0B93BE1C20353200808BC9 /* Tune Exchanger TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tune Exchanger TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0B93C21C20353200808BC9 /* Tune_Exchanger_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tune_Exchanger_TestUITests.swift; sourceTree = "<group>"; };
+		DE0B93C41C20353200808BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE0B939C1C20353100808BC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0B93B01C20353200808BC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0B93BB1C20353200808BC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE0B93961C20353100808BC9 = {
+			isa = PBXGroup;
+			children = (
+				DE0B93A11C20353100808BC9 /* Tune Exchanger Test */,
+				DE0B93B61C20353200808BC9 /* Tune Exchanger TestTests */,
+				DE0B93C11C20353200808BC9 /* Tune Exchanger TestUITests */,
+				DE0B93A01C20353100808BC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE0B93A01C20353100808BC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE0B939F1C20353100808BC9 /* Tune Exchanger Test.app */,
+				DE0B93B31C20353200808BC9 /* Tune Exchanger TestTests.xctest */,
+				DE0B93BE1C20353200808BC9 /* Tune Exchanger TestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE0B93A11C20353100808BC9 /* Tune Exchanger Test */ = {
+			isa = PBXGroup;
+			children = (
+				DE0B93A21C20353100808BC9 /* AppDelegate.swift */,
+				DE0B93A41C20353100808BC9 /* ViewController.swift */,
+				DE0B93A61C20353200808BC9 /* Main.storyboard */,
+				DE0B93A91C20353200808BC9 /* Assets.xcassets */,
+				DE0B93AB1C20353200808BC9 /* LaunchScreen.storyboard */,
+				DE0B93AE1C20353200808BC9 /* Info.plist */,
+			);
+			path = "Tune Exchanger Test";
+			sourceTree = "<group>";
+		};
+		DE0B93B61C20353200808BC9 /* Tune Exchanger TestTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE0B93B71C20353200808BC9 /* Tune_Exchanger_TestTests.swift */,
+				DE0B93B91C20353200808BC9 /* Info.plist */,
+			);
+			path = "Tune Exchanger TestTests";
+			sourceTree = "<group>";
+		};
+		DE0B93C11C20353200808BC9 /* Tune Exchanger TestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DE0B93C21C20353200808BC9 /* Tune_Exchanger_TestUITests.swift */,
+				DE0B93C41C20353200808BC9 /* Info.plist */,
+			);
+			path = "Tune Exchanger TestUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE0B939E1C20353100808BC9 /* Tune Exchanger Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE0B93C71C20353200808BC9 /* Build configuration list for PBXNativeTarget "Tune Exchanger Test" */;
+			buildPhases = (
+				DE0B939B1C20353100808BC9 /* Sources */,
+				DE0B939C1C20353100808BC9 /* Frameworks */,
+				DE0B939D1C20353100808BC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tune Exchanger Test";
+			productName = "Tune Exchanger Test";
+			productReference = DE0B939F1C20353100808BC9 /* Tune Exchanger Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE0B93B21C20353200808BC9 /* Tune Exchanger TestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE0B93CA1C20353200808BC9 /* Build configuration list for PBXNativeTarget "Tune Exchanger TestTests" */;
+			buildPhases = (
+				DE0B93AF1C20353200808BC9 /* Sources */,
+				DE0B93B01C20353200808BC9 /* Frameworks */,
+				DE0B93B11C20353200808BC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE0B93B51C20353200808BC9 /* PBXTargetDependency */,
+			);
+			name = "Tune Exchanger TestTests";
+			productName = "Tune Exchanger TestTests";
+			productReference = DE0B93B31C20353200808BC9 /* Tune Exchanger TestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE0B93BD1C20353200808BC9 /* Tune Exchanger TestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE0B93CD1C20353200808BC9 /* Build configuration list for PBXNativeTarget "Tune Exchanger TestUITests" */;
+			buildPhases = (
+				DE0B93BA1C20353200808BC9 /* Sources */,
+				DE0B93BB1C20353200808BC9 /* Frameworks */,
+				DE0B93BC1C20353200808BC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE0B93C01C20353200808BC9 /* PBXTargetDependency */,
+			);
+			name = "Tune Exchanger TestUITests";
+			productName = "Tune Exchanger TestUITests";
+			productReference = DE0B93BE1C20353200808BC9 /* Tune Exchanger TestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE0B93971C20353100808BC9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = STV;
+				TargetAttributes = {
+					DE0B939E1C20353100808BC9 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = G233NFAF96;
+					};
+					DE0B93B21C20353200808BC9 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = G233NFAF96;
+						TestTargetID = DE0B939E1C20353100808BC9;
+					};
+					DE0B93BD1C20353200808BC9 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = G233NFAF96;
+						TestTargetID = DE0B939E1C20353100808BC9;
+					};
+				};
+			};
+			buildConfigurationList = DE0B939A1C20353100808BC9 /* Build configuration list for PBXProject "Tune Exchanger Test" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE0B93961C20353100808BC9;
+			productRefGroup = DE0B93A01C20353100808BC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE0B939E1C20353100808BC9 /* Tune Exchanger Test */,
+				DE0B93B21C20353200808BC9 /* Tune Exchanger TestTests */,
+				DE0B93BD1C20353200808BC9 /* Tune Exchanger TestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE0B939D1C20353100808BC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0B93AD1C20353200808BC9 /* LaunchScreen.storyboard in Resources */,
+				DE0B93AA1C20353200808BC9 /* Assets.xcassets in Resources */,
+				DE0B93A81C20353200808BC9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0B93B11C20353200808BC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0B93BC1C20353200808BC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE0B939B1C20353100808BC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0B93A51C20353100808BC9 /* ViewController.swift in Sources */,
+				DE0B93A31C20353100808BC9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0B93AF1C20353200808BC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0B93B81C20353200808BC9 /* Tune_Exchanger_TestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0B93BA1C20353200808BC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0B93C31C20353200808BC9 /* Tune_Exchanger_TestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE0B93B51C20353200808BC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE0B939E1C20353100808BC9 /* Tune Exchanger Test */;
+			targetProxy = DE0B93B41C20353200808BC9 /* PBXContainerItemProxy */;
+		};
+		DE0B93C01C20353200808BC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE0B939E1C20353100808BC9 /* Tune Exchanger Test */;
+			targetProxy = DE0B93BF1C20353200808BC9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE0B93A61C20353200808BC9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE0B93A71C20353200808BC9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE0B93AB1C20353200808BC9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE0B93AC1C20353200808BC9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE0B93C51C20353200808BC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE0B93C61C20353200808BC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE0B93C81C20353200808BC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Tune Exchanger Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "stv.jamesclements.Tune-Exchanger-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DE0B93C91C20353200808BC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Tune Exchanger Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "stv.jamesclements.Tune-Exchanger-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DE0B93CB1C20353200808BC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Tune Exchanger TestTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "stv.jamesclements.Tune-Exchanger-TestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tune Exchanger Test.app/Tune Exchanger Test";
+			};
+			name = Debug;
+		};
+		DE0B93CC1C20353200808BC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Tune Exchanger TestTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "stv.jamesclements.Tune-Exchanger-TestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tune Exchanger Test.app/Tune Exchanger Test";
+			};
+			name = Release;
+		};
+		DE0B93CE1C20353200808BC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Tune Exchanger TestUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "stv.jamesclements.Tune-Exchanger-TestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Tune Exchanger Test";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DE0B93CF1C20353200808BC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Tune Exchanger TestUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "stv.jamesclements.Tune-Exchanger-TestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Tune Exchanger Test";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE0B939A1C20353100808BC9 /* Build configuration list for PBXProject "Tune Exchanger Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE0B93C51C20353200808BC9 /* Debug */,
+				DE0B93C61C20353200808BC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE0B93C71C20353200808BC9 /* Build configuration list for PBXNativeTarget "Tune Exchanger Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE0B93C81C20353200808BC9 /* Debug */,
+				DE0B93C91C20353200808BC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DE0B93CA1C20353200808BC9 /* Build configuration list for PBXNativeTarget "Tune Exchanger TestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE0B93CB1C20353200808BC9 /* Debug */,
+				DE0B93CC1C20353200808BC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DE0B93CD1C20353200808BC9 /* Build configuration list for PBXNativeTarget "Tune Exchanger TestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE0B93CE1C20353200808BC9 /* Debug */,
+				DE0B93CF1C20353200808BC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE0B93971C20353100808BC9 /* Project object */;
+}
