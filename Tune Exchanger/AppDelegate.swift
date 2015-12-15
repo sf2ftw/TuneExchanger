@@ -70,33 +70,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let jsonURL = NSBundle.mainBundle().URLForResource("seedTunebooks", withExtension: "json")
         let jsonData = NSData(contentsOfURL: jsonURL!)
+        let json:JSON = JSON(data: jsonData!)
+        var tunebookIndex=0
+        for tuneObject in json {
+            let tunebook = tuneObject["tunebook"].arrayValue
+            print(tunebook.tunebookIndex.["title"].stringValue)
+            tunebookIndex++
+            
+        }
         
-        do {
-            let jsonArray = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: .AllowFragments) as! NSArray
-            let entity = NSEntityDescription.entityForName("Tunebook", inManagedObjectContext: coreDataStack.context)
-            
-            for jsonDictionary in jsonArray {
-                let contentDescription = jsonDictionary["contentDescription"] as! String
-                let title = jsonDictionary["title"] as! String
-                let tuneJson = jsonDictionary["tune"] as! NSArray
-                let tunebook = Tunebook(entity: entity!, insertIntoManagedObjectContext: coreDataStack.context)
-                let tuneArray = tunebook.tune?.array
-                tunebook.contentDescription = contentDescription
-                tunebook.title = title
-                print("Tune JSON contents: \(tuneJson)")
-                
-                //finished importing Tunebooks
-                //tunebook.tune = tuneArray
-                
-                    
-        }
-            
-            coreDataStack.saveContext()
-            print("Imported \(jsonArray.count) Tunebooks")
-            
-        } catch let error as NSError {
-            print("Error importing Tunebook: \(error)")
-        }
+        
+//        do {
+////            let jsonArray = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: .AllowFragments) as! NSArray
+////            let entity = NSEntityDescription.entityForName("Tunebook", inManagedObjectContext: coreDataStack.context)
+////            
+////            for jsonDictionary in jsonArray {
+////                let contentDescription = jsonDictionary["contentDescription"] as! String
+////                let title = jsonDictionary["title"] as! String
+////                let tuneJson = jsonArray["tune"] as! NSArray
+////                let tunebook = Tunebook(entity: entity!, insertIntoManagedObjectContext: coreDataStack.context)
+////                let tuneArray = tunebook.tune?.array
+////                tunebook.contentDescription = contentDescription
+////                tunebook.title = title
+////                print("Tune JSON contents: \(tuneJson)")
+//            
+//                //finished importing Tunebooks
+//                //tunebook.tune = tuneArray
+//                // lets see if we can use SwiftyJson to do this a bit nicer
+//            
+//            
+//                    
+//        }
+//            
+//            coreDataStack.saveContext()
+//            //print("Imported \(jsonArray.count) Tunebooks")
+//            
+//        } catch let error as NSError {
+//            print("Error importing Tunebook: \(error)")
+//        }
     }
 
 
