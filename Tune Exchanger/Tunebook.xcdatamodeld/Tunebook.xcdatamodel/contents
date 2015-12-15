@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
+    <entity name="Set" representedClassName=".Set" syncable="YES">
+        <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="learningFlag" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="settunes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Tune" inverseName="settunes" inverseEntity="Tune" syncable="YES"/>
+        <relationship name="tunebook" optional="YES" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Tunebook" inverseName="set" inverseEntity="Tunebook" syncable="YES"/>
+    </entity>
+    <entity name="Tune" representedClassName=".Tune" syncable="YES">
+        <attribute name="abc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="composer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="importSource" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="learningFlag" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="timeSignature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tuneKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tuneType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="settunes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="settunes" inverseEntity="Set" syncable="YES"/>
+        <relationship name="tunebook" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Tunebook" inverseName="tune" inverseEntity="Tunebook" syncable="YES"/>
+    </entity>
+    <entity name="Tunebook" representedClassName=".Tunebook" syncable="YES">
+        <attribute name="contentDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="set" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Set" inverseName="tunebook" inverseEntity="Set" syncable="YES"/>
+        <relationship name="tune" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Tune" inverseName="tunebook" inverseEntity="Tune" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Set" positionX="-342" positionY="-397" width="128" height="118"/>
+        <element name="Tune" positionX="36" positionY="-193" width="128" height="238"/>
+        <element name="Tunebook" positionX="-603" positionY="-58" width="128" height="103"/>
+    </elements>
+</model>

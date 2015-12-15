@@ -1,0 +1,663 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A3EFFD50EFA9B5D656E1684 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4ED083ECD4080DF14683CA /* Pods.framework */; };
+		DE0A961C1C15848E006B5817 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A961B1C15848E006B5817 /* AppDelegate.swift */; };
+		DE0A96211C15848E006B5817 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0A961F1C15848E006B5817 /* Main.storyboard */; };
+		DE0A96231C15848E006B5817 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE0A96221C15848E006B5817 /* Assets.xcassets */; };
+		DE0A96261C15848E006B5817 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0A96241C15848E006B5817 /* LaunchScreen.storyboard */; };
+		DE0A96311C15848E006B5817 /* Tune_ExchangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A96301C15848E006B5817 /* Tune_ExchangerTests.swift */; };
+		DE0A963C1C15848E006B5817 /* Tune_ExchangerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A963B1C15848E006B5817 /* Tune_ExchangerUITests.swift */; };
+		DE0A964D1C1585DA006B5817 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A964C1C1585DA006B5817 /* CoreDataStack.swift */; };
+		DE0A964F1C1588BD006B5817 /* TunebookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A964E1C1588BD006B5817 /* TunebookTableViewController.swift */; };
+		DE0A96521C158B29006B5817 /* Tunebook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE0A96501C158B29006B5817 /* Tunebook.xcdatamodeld */; };
+		DE11A36D1C1634C8004E9DB0 /* seedTunes.json in Resources */ = {isa = PBXBuildFile; fileRef = DE11A36C1C1634C8004E9DB0 /* seedTunes.json */; };
+		DE33EA581C1EF27200EF7511 /* Tunebook+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33EA571C1EF27200EF7511 /* Tunebook+CoreDataProperties.swift */; };
+		DE64ECD41C1EF1F800B83F74 /* Tune+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64ECCE1C1EF1F800B83F74 /* Tune+CoreDataProperties.swift */; };
+		DE64ECD51C1EF1F800B83F74 /* Tune.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64ECCF1C1EF1F800B83F74 /* Tune.swift */; };
+		DE64ECD71C1EF1F800B83F74 /* Tunebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64ECD11C1EF1F800B83F74 /* Tunebook.swift */; };
+		DE64ECD81C1EF1F800B83F74 /* Set+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64ECD21C1EF1F800B83F74 /* Set+CoreDataProperties.swift */; };
+		DE64ECD91C1EF1F800B83F74 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64ECD31C1EF1F800B83F74 /* Set.swift */; };
+		DEAA3F731C15B8D00034D593 /* seedTunebooks.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAA3F721C15B8D00034D593 /* seedTunebooks.json */; };
+		DEAA3F751C15BBE30034D593 /* TunebookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAA3F741C15BBE30034D593 /* TunebookTableViewCell.swift */; };
+		DEE683C81C17402D00DF0B56 /* TunesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE683C71C17402D00DF0B56 /* TunesTableViewController.swift */; };
+		DEE683CA1C17496600DF0B56 /* TuneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE683C91C17496600DF0B56 /* TuneTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE0A962D1C15848E006B5817 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE0A96101C15848E006B5817 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE0A96171C15848E006B5817;
+			remoteInfo = "Tune Exchanger";
+		};
+		DE0A96381C15848E006B5817 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE0A96101C15848E006B5817 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE0A96171C15848E006B5817;
+			remoteInfo = "Tune Exchanger";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C4ED083ECD4080DF14683CA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35F1B60021955DD8D6D3A53B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DE0A96181C15848E006B5817 /* Tune Exchanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tune Exchanger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0A961B1C15848E006B5817 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE0A96201C15848E006B5817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE0A96221C15848E006B5817 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE0A96251C15848E006B5817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE0A96271C15848E006B5817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE0A962C1C15848E006B5817 /* Tune ExchangerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tune ExchangerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0A96301C15848E006B5817 /* Tune_ExchangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tune_ExchangerTests.swift; sourceTree = "<group>"; };
+		DE0A96321C15848E006B5817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE0A96371C15848E006B5817 /* Tune ExchangerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tune ExchangerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0A963B1C15848E006B5817 /* Tune_ExchangerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tune_ExchangerUITests.swift; sourceTree = "<group>"; };
+		DE0A963D1C15848E006B5817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE0A964C1C1585DA006B5817 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		DE0A964E1C1588BD006B5817 /* TunebookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TunebookTableViewController.swift; path = ../TunebookTableViewController.swift; sourceTree = "<group>"; };
+		DE0A96511C158B29006B5817 /* Tunebook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tunebook.xcdatamodel; sourceTree = "<group>"; };
+		DE11A36C1C1634C8004E9DB0 /* seedTunes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seedTunes.json; sourceTree = "<group>"; };
+		DE33EA571C1EF27200EF7511 /* Tunebook+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tunebook+CoreDataProperties.swift"; path = "../Tunebook+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DE64ECCE1C1EF1F800B83F74 /* Tune+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tune+CoreDataProperties.swift"; path = "../Tune+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DE64ECCF1C1EF1F800B83F74 /* Tune.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tune.swift; path = ../Tune.swift; sourceTree = "<group>"; };
+		DE64ECD11C1EF1F800B83F74 /* Tunebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tunebook.swift; path = ../Tunebook.swift; sourceTree = "<group>"; };
+		DE64ECD21C1EF1F800B83F74 /* Set+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Set+CoreDataProperties.swift"; path = "../Set+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DE64ECD31C1EF1F800B83F74 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Set.swift; path = ../Set.swift; sourceTree = "<group>"; };
+		DEAA3F721C15B8D00034D593 /* seedTunebooks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seedTunebooks.json; sourceTree = "<group>"; };
+		DEAA3F741C15BBE30034D593 /* TunebookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunebookTableViewCell.swift; sourceTree = "<group>"; };
+		DEE683C71C17402D00DF0B56 /* TunesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunesTableViewController.swift; sourceTree = "<group>"; };
+		DEE683C91C17496600DF0B56 /* TuneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuneTableViewCell.swift; sourceTree = "<group>"; };
+		F60F675E95560DD19D6D75B1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE0A96151C15848E006B5817 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A3EFFD50EFA9B5D656E1684 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0A96291C15848E006B5817 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0A96341C15848E006B5817 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8D8A4282AC9A8C885E9CD4D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C4ED083ECD4080DF14683CA /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC9AEC322A387153B5A48CB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				35F1B60021955DD8D6D3A53B /* Pods.debug.xcconfig */,
+				F60F675E95560DD19D6D75B1 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DE0A960F1C15848E006B5817 = {
+			isa = PBXGroup;
+			children = (
+				DE0A961A1C15848E006B5817 /* Tune Exchanger */,
+				DE0A962F1C15848E006B5817 /* Tune ExchangerTests */,
+				DE0A963A1C15848E006B5817 /* Tune ExchangerUITests */,
+				DE0A96191C15848E006B5817 /* Products */,
+				DC9AEC322A387153B5A48CB8 /* Pods */,
+				8D8A4282AC9A8C885E9CD4D6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DE0A96191C15848E006B5817 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE0A96181C15848E006B5817 /* Tune Exchanger.app */,
+				DE0A962C1C15848E006B5817 /* Tune ExchangerTests.xctest */,
+				DE0A96371C15848E006B5817 /* Tune ExchangerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE0A961A1C15848E006B5817 /* Tune Exchanger */ = {
+			isa = PBXGroup;
+			children = (
+				DEAA3F711C15B7C40034D593 /* Classes */,
+				DE0A961B1C15848E006B5817 /* AppDelegate.swift */,
+				DE0A961F1C15848E006B5817 /* Main.storyboard */,
+				DEE683C91C17496600DF0B56 /* TuneTableViewCell.swift */,
+				DEE683C71C17402D00DF0B56 /* TunesTableViewController.swift */,
+				DEAA3F741C15BBE30034D593 /* TunebookTableViewCell.swift */,
+				DE0A964E1C1588BD006B5817 /* TunebookTableViewController.swift */,
+				DE0A96221C15848E006B5817 /* Assets.xcassets */,
+				DE0A96241C15848E006B5817 /* LaunchScreen.storyboard */,
+				DEAA3F721C15B8D00034D593 /* seedTunebooks.json */,
+				DE11A36C1C1634C8004E9DB0 /* seedTunes.json */,
+				DE0A96271C15848E006B5817 /* Info.plist */,
+				DE0A964C1C1585DA006B5817 /* CoreDataStack.swift */,
+				DE0A96501C158B29006B5817 /* Tunebook.xcdatamodeld */,
+			);
+			path = "Tune Exchanger";
+			sourceTree = "<group>";
+		};
+		DE0A962F1C15848E006B5817 /* Tune ExchangerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE0A96301C15848E006B5817 /* Tune_ExchangerTests.swift */,
+				DE0A96321C15848E006B5817 /* Info.plist */,
+			);
+			path = "Tune ExchangerTests";
+			sourceTree = "<group>";
+		};
+		DE0A963A1C15848E006B5817 /* Tune ExchangerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DE0A963B1C15848E006B5817 /* Tune_ExchangerUITests.swift */,
+				DE0A963D1C15848E006B5817 /* Info.plist */,
+			);
+			path = "Tune ExchangerUITests";
+			sourceTree = "<group>";
+		};
+		DEAA3F711C15B7C40034D593 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DE64ECCE1C1EF1F800B83F74 /* Tune+CoreDataProperties.swift */,
+				DE64ECCF1C1EF1F800B83F74 /* Tune.swift */,
+				DE64ECD11C1EF1F800B83F74 /* Tunebook.swift */,
+				DE33EA571C1EF27200EF7511 /* Tunebook+CoreDataProperties.swift */,
+				DE64ECD21C1EF1F800B83F74 /* Set+CoreDataProperties.swift */,
+				DE64ECD31C1EF1F800B83F74 /* Set.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE0A96171C15848E006B5817 /* Tune Exchanger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE0A96401C15848E006B5817 /* Build configuration list for PBXNativeTarget "Tune Exchanger" */;
+			buildPhases = (
+				ACB476DFB942C30D4B722A93 /* Check Pods Manifest.lock */,
+				DE0A96141C15848E006B5817 /* Sources */,
+				DE0A96151C15848E006B5817 /* Frameworks */,
+				DE0A96161C15848E006B5817 /* Resources */,
+				290AC7CF11E20E9D15F9F2D9 /* Embed Pods Frameworks */,
+				70FB212828FC09D670D16687 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tune Exchanger";
+			productName = "Tune Exchanger";
+			productReference = DE0A96181C15848E006B5817 /* Tune Exchanger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE0A962B1C15848E006B5817 /* Tune ExchangerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE0A96431C15848E006B5817 /* Build configuration list for PBXNativeTarget "Tune ExchangerTests" */;
+			buildPhases = (
+				DE0A96281C15848E006B5817 /* Sources */,
+				DE0A96291C15848E006B5817 /* Frameworks */,
+				DE0A962A1C15848E006B5817 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE0A962E1C15848E006B5817 /* PBXTargetDependency */,
+			);
+			name = "Tune ExchangerTests";
+			productName = "Tune ExchangerTests";
+			productReference = DE0A962C1C15848E006B5817 /* Tune ExchangerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE0A96361C15848E006B5817 /* Tune ExchangerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE0A96461C15848E006B5817 /* Build configuration list for PBXNativeTarget "Tune ExchangerUITests" */;
+			buildPhases = (
+				DE0A96331C15848E006B5817 /* Sources */,
+				DE0A96341C15848E006B5817 /* Frameworks */,
+				DE0A96351C15848E006B5817 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE0A96391C15848E006B5817 /* PBXTargetDependency */,
+			);
+			name = "Tune ExchangerUITests";
+			productName = "Tune ExchangerUITests";
+			productReference = DE0A96371C15848E006B5817 /* Tune ExchangerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE0A96101C15848E006B5817 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = STV;
+				TargetAttributes = {
+					DE0A96171C15848E006B5817 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = G233NFAF96;
+					};
+					DE0A962B1C15848E006B5817 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = G233NFAF96;
+						TestTargetID = DE0A96171C15848E006B5817;
+					};
+					DE0A96361C15848E006B5817 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = G233NFAF96;
+						TestTargetID = DE0A96171C15848E006B5817;
+					};
+				};
+			};
+			buildConfigurationList = DE0A96131C15848E006B5817 /* Build configuration list for PBXProject "Tune Exchanger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE0A960F1C15848E006B5817;
+			productRefGroup = DE0A96191C15848E006B5817 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE0A96171C15848E006B5817 /* Tune Exchanger */,
+				DE0A962B1C15848E006B5817 /* Tune ExchangerTests */,
+				DE0A96361C15848E006B5817 /* Tune ExchangerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE0A96161C15848E006B5817 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0A96261C15848E006B5817 /* LaunchScreen.storyboard in Resources */,
+				DE0A96231C15848E006B5817 /* Assets.xcassets in Resources */,
+				DEAA3F731C15B8D00034D593 /* seedTunebooks.json in Resources */,
+				DE11A36D1C1634C8004E9DB0 /* seedTunes.json in Resources */,
+				DE0A96211C15848E006B5817 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0A962A1C15848E006B5817 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0A96351C15848E006B5817 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		290AC7CF11E20E9D15F9F2D9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70FB212828FC09D670D16687 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACB476DFB942C30D4B722A93 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE0A96141C15848E006B5817 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0A96521C158B29006B5817 /* Tunebook.xcdatamodeld in Sources */,
+				DE64ECD71C1EF1F800B83F74 /* Tunebook.swift in Sources */,
+				DE0A964F1C1588BD006B5817 /* TunebookTableViewController.swift in Sources */,
+				DEAA3F751C15BBE30034D593 /* TunebookTableViewCell.swift in Sources */,
+				DE64ECD41C1EF1F800B83F74 /* Tune+CoreDataProperties.swift in Sources */,
+				DE0A964D1C1585DA006B5817 /* CoreDataStack.swift in Sources */,
+				DE64ECD81C1EF1F800B83F74 /* Set+CoreDataProperties.swift in Sources */,
+				DE64ECD51C1EF1F800B83F74 /* Tune.swift in Sources */,
+				DE64ECD91C1EF1F800B83F74 /* Set.swift in Sources */,
+				DEE683CA1C17496600DF0B56 /* TuneTableViewCell.swift in Sources */,
+				DE33EA581C1EF27200EF7511 /* Tunebook+CoreDataProperties.swift in Sources */,
+				DE0A961C1C15848E006B5817 /* AppDelegate.swift in Sources */,
+				DEE683C81C17402D00DF0B56 /* TunesTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0A96281C15848E006B5817 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0A96311C15848E006B5817 /* Tune_ExchangerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0A96331C15848E006B5817 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0A963C1C15848E006B5817 /* Tune_ExchangerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE0A962E1C15848E006B5817 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE0A96171C15848E006B5817 /* Tune Exchanger */;
+			targetProxy = DE0A962D1C15848E006B5817 /* PBXContainerItemProxy */;
+		};
+		DE0A96391C15848E006B5817 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE0A96171C15848E006B5817 /* Tune Exchanger */;
+			targetProxy = DE0A96381C15848E006B5817 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE0A961F1C15848E006B5817 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE0A96201C15848E006B5817 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE0A96241C15848E006B5817 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE0A96251C15848E006B5817 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE0A963E1C15848E006B5817 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE0A963F1C15848E006B5817 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE0A96411C15848E006B5817 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35F1B60021955DD8D6D3A53B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Tune Exchanger/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "stv.jamesclements.Tune-Exchanger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DE0A96421C15848E006B5817 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F60F675E95560DD19D6D75B1 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Tune Exchanger/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "stv.jamesclements.Tune-Exchanger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DE0A96441C15848E006B5817 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Tune ExchangerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "stv.jamesclements.Tune-ExchangerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tune Exchanger.app/Tune Exchanger";
+			};
+			name = Debug;
+		};
+		DE0A96451C15848E006B5817 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Tune ExchangerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "stv.jamesclements.Tune-ExchangerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tune Exchanger.app/Tune Exchanger";
+			};
+			name = Release;
+		};
+		DE0A96471C15848E006B5817 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Tune ExchangerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "stv.jamesclements.Tune-ExchangerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Tune Exchanger";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DE0A96481C15848E006B5817 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Tune ExchangerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "stv.jamesclements.Tune-ExchangerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Tune Exchanger";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE0A96131C15848E006B5817 /* Build configuration list for PBXProject "Tune Exchanger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE0A963E1C15848E006B5817 /* Debug */,
+				DE0A963F1C15848E006B5817 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE0A96401C15848E006B5817 /* Build configuration list for PBXNativeTarget "Tune Exchanger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE0A96411C15848E006B5817 /* Debug */,
+				DE0A96421C15848E006B5817 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE0A96431C15848E006B5817 /* Build configuration list for PBXNativeTarget "Tune ExchangerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE0A96441C15848E006B5817 /* Debug */,
+				DE0A96451C15848E006B5817 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE0A96461C15848E006B5817 /* Build configuration list for PBXNativeTarget "Tune ExchangerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE0A96471C15848E006B5817 /* Debug */,
+				DE0A96481C15848E006B5817 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE0A96501C158B29006B5817 /* Tunebook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE0A96511C158B29006B5817 /* Tunebook.xcdatamodel */,
+			);
+			currentVersion = DE0A96511C158B29006B5817 /* Tunebook.xcdatamodel */;
+			path = Tunebook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DE0A96101C15848E006B5817 /* Project object */;
+}
