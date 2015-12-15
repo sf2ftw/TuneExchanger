@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -83,6 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 tunebook.contentDescription = contentDescription
                 tunebook.title = title
                 print("Tune JSON contents: \(tuneJson)")
+                
                 //finished importing Tunebooks
                 //tunebook.tune = tuneArray
                 
