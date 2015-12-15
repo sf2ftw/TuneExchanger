@@ -69,8 +69,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //just a test function to import some data from the json file to give me some test data
         
         let jsonURL = NSBundle.mainBundle().URLForResource("seedTunebooks", withExtension: "json")
-        let jsonData = NSData(contentsOfURL: jsonURL!)
-        let json:JSON = JSON(data: jsonData!)
+        //let jsonData = NSData(contentsOfURL: jsonURL!)
+        let json:JSON = JSON(data: NSData(contentsOfURL: jsonURL!)!)
         if let tunebookArray = json["tunebook"].array {  //get the tunebookArray
             for tunebook in tunebookArray {
                 let title = tunebook["title"].string
@@ -82,20 +82,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let tuneTitle = tune["title"].string
                     print("Tune: \(tuneTitle!)")
                 } //finished importing tunes directly in tunebook
-                let sets = tunebook["set"].array
+                let sets = tunebook["sets"].array
                 for set in sets! {
                     let setTitle = set["title"].string
-                    print("setTitle = \(setTitle)")
-                    let tunesInSet = tunebook[set.string!]["tune"].array
+                    print("setTitle = \(setTitle!)")
+                    let tunesInSet = set["tune"].array
                     for tuneInSet in tunesInSet! {
                         let tuneInSetTitle = tuneInSet["title"].string
-                        print("tuneInSetTitle = \(tuneInSetTitle)")
+                        print("tuneInSetTitle = \(tuneInSetTitle!)")
                     } //end tuneInSet loop
                 }//end set loop
-  
-            }
+            }//end of tunebook loop
         }
-    } // end tunebook loop
+    }
             
 //        do {
 ////            let jsonArray = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: .AllowFragments) as! NSArray
