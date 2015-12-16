@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func importJSONSeedDataTunebook() {
         let TunebookEntity = NSEntityDescription.entityForName("Tunebook", inManagedObjectContext: coreDataStack.context)
         let TuneEntity = NSEntityDescription.entityForName("Tune", inManagedObjectContext: coreDataStack.context)
-        let SetEntity = NSEntityDescription.entityForName("Tune", inManagedObjectContext: coreDataStack.context)
+        let SetEntity = NSEntityDescription.entityForName("Set", inManagedObjectContext: coreDataStack.context)
         let jsonURL = NSBundle.mainBundle().URLForResource("seedTunebooks", withExtension: "json")
         let json:JSON = JSON(data: NSData(contentsOfURL: jsonURL!)!)
         if let tunebookArray = json["tunebook"].array {  //get the tunebookArray
@@ -86,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }// end import if there are no tunes in tunebook
                 if let sets = tunebook["sets"].array {
                     for set in sets {
-                        let setData = Tune(entity: SetEntity!, insertIntoManagedObjectContext: coreDataStack.context)
+                        let setData = Set(entity: SetEntity!, insertIntoManagedObjectContext: coreDataStack.context)
                         setData.title = set["title"].string
                         print("setTitle = \(setData.title!)")
                         let tunesInSet = set["tune"].array
