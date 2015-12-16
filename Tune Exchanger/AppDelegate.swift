@@ -66,37 +66,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func importJSONSeedDataTunebook() {
-        //just a test function to import some data from the json file to give me some test data
-        
+        let TunebookEntity = NSEntityDescription.entityForName("Tunebook", inManagedObjectContext: coreDataStack.context)
+        let TuneEntity = NSEntityDescription.entityForName("Tune", inManagedObjectContext: coreDataStack.context)
+        let SetEntity = NSEntityDescription.entityForName("Tune", inManagedObjectContext: coreDataStack.context)
         let jsonURL = NSBundle.mainBundle().URLForResource("seedTunebooks", withExtension: "json")
-        //let jsonData = NSData(contentsOfURL: jsonURL!)
         let json:JSON = JSON(data: NSData(contentsOfURL: jsonURL!)!)
         if let tunebookArray = json["tunebook"].array {  //get the tunebookArray
             for tunebook in tunebookArray {
-                let title = tunebook["title"].string
-                let description = tunebook["contentDescription"].string
-                print("title = \(title!), description = \(description!)")
-                //finished importing title and description of tunebook
+                let tunebookData = Tunebook(entity: TunebookEntity!, insertIntoManagedObjectContext: coreDataStack.context)
+                tunebookData.title = tunebook["title"].string
+                tunebookData.contentDescription = tunebook["contentDescription"].string
+                print("title = \(tunebookData.title!), description = \(tunebookData.contentDescription!)")
                 if let tunes = tunebook["tune"].array {
                     for tune in tunes {
-                        let tuneTitle = tune["title"].string
-                        print("Tune: \(tuneTitle!)")
+                        let tuneData = Tune(entity: TuneEntity!, insertIntoManagedObjectContext: coreDataStack.context)
+                        tuneData.title = tune["title"].string
+                        print("Tune: \(tuneData.title!)")
                     } //finished importing tunes directly in tunebook
                 }// end import if there are no tunes in tunebook
                 if let sets = tunebook["sets"].array {
                     for set in sets {
-                        let setTitle = set["title"].string
-                        print("setTitle = \(setTitle!)")
+                        let setData = Tune(entity: SetEntity!, insertIntoManagedObjectContext: coreDataStack.context)
+                        setData.title = set["title"].string
+                        print("setTitle = \(setData.title!)")
                         let tunesInSet = set["tune"].array
                         for tuneInSet in tunesInSet! {
-                            let tuneInSetTitle = tuneInSet["title"].string
-                            print("tuneInSetTitle = \(tuneInSetTitle!)")
+                            let tuneData = Tune(entity: TuneEntity!, insertIntoManagedObjectContext: coreDataStack.context)
+                            tuneData.title = tuneInSet["title"].string
+                            print("tuneInSetTitle = \(tuneData.title!)")
                         } //end tuneInSet loop
                     }//end sets import loop
                 }//end import if there are no sets in tunebook
-                }
-            }//end of tunebook loop
-        }
+                }//end of tunebook loop    
+            coreDataStack.saveContext()
+        } //end of if let tunebook
+    }
     
             
 //        do {
