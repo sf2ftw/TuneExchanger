@@ -28,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationControllerTunesLink = tabBarController.viewControllers?.last as! UINavigationController
         let viewController2 = navigationControllerTunesLink.topViewController as! TunesTableViewController
         viewController2.managedContext = coreDataStack.context
+        
         importJSONTunebookSeedDataIfNeeded()
-        //importJSONTuneSeedDataIfNeeded()
         return true
     }
 
@@ -60,9 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if count == 0 {
             //importJSONSeedDataTunebook()
             let jsonSeedDataUrl = NSBundle.mainBundle().URLForResource("seedTunebooks", withExtension: "json")
-            let TunebookEntity = NSEntityDescription.entityForName("Tunebook", inManagedObjectContext: coreDataStack.context)
-            let tunebookData = Tunebook(entity: TunebookEntity!, insertIntoManagedObjectContext: coreDataStack.context)
-            let result = tunebookData.importJSONTunebookFile(jsonSeedDataUrl!, coreDataStack: coreDataStack)
+            let result = Tunebook.importJSONTunebookFile(jsonSeedDataUrl!, coreDataStack: coreDataStack)
             if result == true {
                 print ("Data from \(jsonSeedDataUrl) imported successfully")
             } else {

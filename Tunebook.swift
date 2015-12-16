@@ -15,7 +15,7 @@ class Tunebook: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 
-    func importJSONTunebookFile(jsonFileUrl: NSURL, coreDataStack: CoreDataStack) -> Bool {
+    class func importJSONTunebookFile(jsonFileUrl: NSURL, coreDataStack: CoreDataStack) -> Bool {
         //function to import to tunebook from a json file
         let TunebookEntity = NSEntityDescription.entityForName("Tunebook", inManagedObjectContext: coreDataStack.context)
         let TuneEntity = NSEntityDescription.entityForName("Tune", inManagedObjectContext: coreDataStack.context)
