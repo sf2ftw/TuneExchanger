@@ -38,6 +38,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="titleLabel" destination="S4N-go-lVa" id="agO-YO-CZ4"/>
+                                    <segue destination="x0T-Mv-Inr" kind="show" identifier="Show Tunebook Contents" id="mnr-cv-hAa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -49,9 +50,6 @@
                     <navigationItem key="navigationItem" title="Tunebook" id="RzS-y8-KCj">
                         <barButtonItem key="leftBarButtonItem" title="Add" id="JB5-4V-abn"/>
                     </navigationItem>
-                    <connections>
-                        <segue destination="x0T-Mv-Inr" kind="show" identifier="Show Set" id="pRF-GK-Zxe"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubk-wc-n4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -153,22 +151,38 @@
             </objects>
             <point key="canvasLocation" x="1675" y="-290"/>
         </scene>
-        <!--Sets-->
+        <!--Tunebook Contents Table View Controller-->
         <scene sceneID="IsM-gT-ekH">
             <objects>
-                <tableViewController id="x0T-Mv-Inr" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="djx-zb-Vqs">
+                <tableViewController storyboardIdentifier="Sets" id="x0T-Mv-Inr" customClass="TunebookContentsTableViewController" customModule="Tune_Exchanger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="39" sectionHeaderHeight="28" sectionFooterHeight="28" id="djx-zb-Vqs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JhC-ll-Qnb">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetCell" rowHeight="39" id="JhC-ll-Qnb" customClass="TunebookContentsTableViewCell" customModule="Tune_Exchanger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="39"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JhC-ll-Qnb" id="kah-qz-QvY">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="38"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvT-qN-Xhn">
+                                            <rect key="frame" x="8" y="0.0" width="584" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mvT-qN-Xhn" firstAttribute="leading" secondItem="kah-qz-QvY" secondAttribute="leadingMargin" id="Crf-fP-dwz"/>
+                                        <constraint firstItem="mvT-qN-Xhn" firstAttribute="top" secondItem="kah-qz-QvY" secondAttribute="top" id="UjU-rE-EJy"/>
+                                        <constraint firstItem="mvT-qN-Xhn" firstAttribute="trailing" secondItem="kah-qz-QvY" secondAttribute="trailingMargin" id="ggd-nc-z1H"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="title" destination="mvT-qN-Xhn" id="5fd-HA-AcS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -176,11 +190,10 @@
                             <outlet property="delegate" destination="x0T-Mv-Inr" id="aTp-ny-POn"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Sets" id="zhB-CJ-jCS"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJ2-bd-eWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1675" y="1222"/>
+            <point key="canvasLocation" x="2377" y="442"/>
         </scene>
         <!--Tunebook-->
         <scene sceneID="HyF-En-gsb">

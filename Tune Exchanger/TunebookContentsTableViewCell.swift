@@ -1,18 +1,16 @@
 //
-//  TunebookTableViewCell.swift
+//  TunebookContentsTableViewCell.swift
 //  Tune Exchanger
 //
-//  Created by I.T. Support on 07/12/2015.
+//  Created by I.T. Support on 17/12/2015.
 //  Copyright © 2015 STV. All rights reserved.
 //
 
 import UIKit
 
-class TunebookTableViewCell: UITableViewCell {
+class TunebookContentsTableViewCell: UITableViewCell {
 
-    var currentTunebook : Tunebook?
-    
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var title: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

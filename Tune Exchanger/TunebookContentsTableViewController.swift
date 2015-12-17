@@ -1,48 +1,48 @@
 //
-//  TunebookTableViewController.swift
-//  Tune Exchanger
+//  TunebookContentsTableViewController.swift
+//  
 //
-//  Created by I.T. Support on 07/12/2015.
-//  Copyright © 2015 STV. All rights reserved.
+//  Created by I.T. Support on 17/12/2015.
+//
 //
 
 import UIKit
 import CoreData
 
-class TunebookTableViewController: UITableViewController {
-    //Mark: - Variables
+class TunebookContentsTableViewController: UITableViewController {
+    
+    var currentTunebook : Tunebook?
     
     var managedContext: NSManagedObjectContext! //link to managed context
     
     var fetchedResultsController : NSFetchedResultsController!
     
-    //var selectedTunebook : Tunebook?
-    
-    //MARK: - Lifecycle
-    
     struct Constants {
-    static let titleText = "Tunebooks"
-    static let tunebookEntity = "Tunebook"
-    static let tunebookCellID = "Tunebook Cell"
-    static let ShowTunebookContents = "Show Tunebook Contents"
+    static let tunebookEntity = "Set"
+    static let SetCellId = "SetCell"
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    //self.title = Constants.titleText
-    let fetchRequest = NSFetchRequest(entityName: Constants.tunebookEntity)
-    let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
-    fetchRequest.sortDescriptors = [sortDescriptor]
-    fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,managedObjectContext:managedContext, sectionNameKeyPath: nil, cacheName: nil)
-    
-    do {
+        title = currentTunebook?.title
+        let fetchRequest = NSFetchRequest(entityName: Constants.tunebookEntity )
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchRequest.predicate = NSPredicate(format: "tunebook == %@", currentTunebook!)
+        //fetchRequest.predicate = NSPrededicate(format: "tunebook"
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,managedObjectContext:managedContext, sectionNameKeyPath: nil, cacheName: nil)
+        do {
             try fetchedResultsController.performFetch()
         } catch let error as NSError {
             print("Error: \(error.localizedDescription)")
         }
-        
     }
-    
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -51,27 +51,28 @@ class TunebookTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            let sectionInfo = fetchedResultsController.sections![section]
-            return sectionInfo.numberOfObjects
+        let sectionInfo = fetchedResultsController.sections![section]
+        return sectionInfo.numberOfObjects
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.tunebookCellID, forIndexPath: indexPath) as! TunebookTableViewCell
     
-        let tunebook = fetchedResultsController.objectAtIndexPath(indexPath) as! Tunebook
-        cell.currentTunebook = tunebook
-        cell.titleLabel.text = tunebook.title
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.SetCellId, forIndexPath: indexPath) as! TunebookContentsTableViewCell
+        
+        let set = fetchedResultsController.objectAtIndexPath(indexPath) as! Set
+        //cell.currentTunebook = tunebook
+        cell.title.text = set.title
         return cell
     }
-
+    
 
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
-    }*/
-    
+    }
+    */
 
     /*
     // Override to support editing the table view.
@@ -82,8 +83,8 @@ class TunebookTableViewController: UITableViewController {
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
-    }*/
-    
+    }
+    */
 
     /*
     // Override to support rearranging the table view.
@@ -100,18 +101,30 @@ class TunebookTableViewController: UITableViewController {
     }
     */
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             if identifier == Constants.ShowTunebookContents {
                 if let destinationController = segue.destinationViewController as? TunebookContentsTableViewController {
-                    if let TunebookCell = sender as? TunebookTableViewCell {
-                        destinationController.currentTunebook = TunebookCell.currentTunebook
-                        destinationController.managedContext = managedContext
-                    }
+                    destinationController.CurrentTunebook = 
                 }
+                
             }
         }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        */
+        
+
+
+        
+        
+        
+        
     }
+    
 
 
-}

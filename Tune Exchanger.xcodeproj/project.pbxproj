@@ -24,6 +24,8 @@
 		DE64ECD71C1EF1F800B83F74 /* Tunebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64ECD11C1EF1F800B83F74 /* Tunebook.swift */; };
 		DE64ECD81C1EF1F800B83F74 /* Set+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64ECD21C1EF1F800B83F74 /* Set+CoreDataProperties.swift */; };
 		DE64ECD91C1EF1F800B83F74 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64ECD31C1EF1F800B83F74 /* Set.swift */; };
+		DE75D3C61C2362E00056F400 /* TunebookContentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75D3C51C2362E00056F400 /* TunebookContentsTableViewController.swift */; };
+		DE75D3C81C237BE70056F400 /* TunebookContentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75D3C71C237BE70056F400 /* TunebookContentsTableViewCell.swift */; };
 		DEAA3F731C15B8D00034D593 /* seedTunebooks.json in Resources */ = {isa = PBXBuildFile; fileRef = DEAA3F721C15B8D00034D593 /* seedTunebooks.json */; };
 		DEAA3F751C15BBE30034D593 /* TunebookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAA3F741C15BBE30034D593 /* TunebookTableViewCell.swift */; };
 		DEE683C81C17402D00DF0B56 /* TunesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE683C71C17402D00DF0B56 /* TunesTableViewController.swift */; };
@@ -72,6 +74,8 @@
 		DE64ECD11C1EF1F800B83F74 /* Tunebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tunebook.swift; path = ../Tunebook.swift; sourceTree = "<group>"; };
 		DE64ECD21C1EF1F800B83F74 /* Set+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Set+CoreDataProperties.swift"; path = "../Set+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DE64ECD31C1EF1F800B83F74 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Set.swift; path = ../Set.swift; sourceTree = "<group>"; };
+		DE75D3C51C2362E00056F400 /* TunebookContentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunebookContentsTableViewController.swift; sourceTree = "<group>"; };
+		DE75D3C71C237BE70056F400 /* TunebookContentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunebookContentsTableViewCell.swift; sourceTree = "<group>"; };
 		DEAA3F721C15B8D00034D593 /* seedTunebooks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seedTunebooks.json; sourceTree = "<group>"; };
 		DEAA3F741C15BBE30034D593 /* TunebookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunebookTableViewCell.swift; sourceTree = "<group>"; };
 		DEE683C71C17402D00DF0B56 /* TunesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunesTableViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				DEAA3F711C15B7C40034D593 /* Classes */,
 				DE0A961B1C15848E006B5817 /* AppDelegate.swift */,
 				DE0A961F1C15848E006B5817 /* Main.storyboard */,
+				DE75D3C71C237BE70056F400 /* TunebookContentsTableViewCell.swift */,
+				DE75D3C51C2362E00056F400 /* TunebookContentsTableViewController.swift */,
 				DEE683C91C17496600DF0B56 /* TuneTableViewCell.swift */,
 				DEE683C71C17402D00DF0B56 /* TunesTableViewController.swift */,
 				DEAA3F741C15BBE30034D593 /* TunebookTableViewCell.swift */,
@@ -385,9 +391,11 @@
 			files = (
 				DE0A96521C158B29006B5817 /* Tunebook.xcdatamodeld in Sources */,
 				DE64ECD71C1EF1F800B83F74 /* Tunebook.swift in Sources */,
+				DE75D3C61C2362E00056F400 /* TunebookContentsTableViewController.swift in Sources */,
 				DE0A964F1C1588BD006B5817 /* TunebookTableViewController.swift in Sources */,
 				DEAA3F751C15BBE30034D593 /* TunebookTableViewCell.swift in Sources */,
 				DE64ECD41C1EF1F800B83F74 /* Tune+CoreDataProperties.swift in Sources */,
+				DE75D3C81C237BE70056F400 /* TunebookContentsTableViewCell.swift in Sources */,
 				DE0A964D1C1585DA006B5817 /* CoreDataStack.swift in Sources */,
 				DE64ECD81C1EF1F800B83F74 /* Set+CoreDataProperties.swift in Sources */,
 				DE64ECD51C1EF1F800B83F74 /* Tune.swift in Sources */,
