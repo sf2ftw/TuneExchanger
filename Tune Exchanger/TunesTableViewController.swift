@@ -13,8 +13,6 @@ class TunesTableViewController: UITableViewController {
 
     var managedContext: NSManagedObjectContext! //link to managed context
     
-    
-    
     var fetchedResultsController : NSFetchedResultsController!
     
     struct Constants {

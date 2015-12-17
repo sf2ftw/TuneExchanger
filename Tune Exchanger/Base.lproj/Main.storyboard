@@ -47,7 +47,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tunebook" id="RzS-y8-KCj">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="JB5-4V-abn"/>
+                        <barButtonItem key="leftBarButtonItem" title="Add" id="JB5-4V-abn"/>
                     </navigationItem>
                     <connections>
                         <segue destination="x0T-Mv-Inr" kind="show" identifier="Show Set" id="pRF-GK-Zxe"/>
@@ -145,7 +145,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tunes" id="3TC-2n-0Z9">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="Len-MI-9OG"/>
+                        <barButtonItem key="leftBarButtonItem" title="Add" id="Len-MI-9OG"/>
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="6B6-UT-ff7"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oag-Fm-gFd" userLabel="First Responder" sceneMemberID="firstResponder"/>

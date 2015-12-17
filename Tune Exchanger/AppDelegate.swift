@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationControllerTunesLink = tabBarController.viewControllers?.last as! UINavigationController
         let viewController2 = navigationControllerTunesLink.topViewController as! TunesTableViewController
         viewController2.managedContext = coreDataStack.context
-        
+        importJSONTuneSeedDataIfNeeded()
         importJSONTunebookSeedDataIfNeeded()
         return true
     }
@@ -58,13 +58,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var error:NSError? = nil
         let count = coreDataStack.context.countForFetchRequest(fetchRequest, error: &error)
         if count == 0 {
-            //importJSONSeedDataTunebook()
-            let jsonSeedDataUrl = NSBundle.mainBundle().URLForResource("seedTunebooks", withExtension: "json")
-            let result = Tunebook.importJSONTunebookFile(jsonSeedDataUrl!, coreDataStack: coreDataStack)
-            if result == true {
-                print ("Data from \(jsonSeedDataUrl) imported successfully")
-            } else {
-                print ("Data from \(jsonSeedDataUrl) not imported")
+            if let jsonSeedDataUrl = NSBundle.mainBundle().URLForResource("seedTunebooks", withExtension: "json"){
+                let result = Tunebook.importJSONTunebookFile(jsonSeedDataUrl, coreDataStack: coreDataStack)
+                if result == true {
+                    print ("Data from \(jsonSeedDataUrl) imported successfully")
+                } else {
+                    print ("Data from \(jsonSeedDataUrl) not imported")
+                }
             }
         }
         
@@ -76,7 +76,9 @@ func importJSONTuneSeedDataIfNeeded() {
     var error:NSError? = nil
     let count = coreDataStack.context.countForFetchRequest(fetchRequest, error: &error)
     if count == 0 {
-        importJSONTuneSeedData()
+        if let jsonSeedDataUrl = NSBundle.mainBundle().URLForResource("seedTunes", withExtension: "json")
+        {
+            let result = Tune.importJSONTuneFile(jsonSeedDataUrl, coreDataStack: coreDataStack) }
     }
 }
 
