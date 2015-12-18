@@ -30,7 +30,7 @@ class TunebookContentsTableViewController: UITableViewController {
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.predicate = NSPredicate(format: "tunebook == %@", currentTunebook!)
         //fetchRequest.predicate = NSPrededicate(format: "tunebook"
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,managedObjectContext:managedContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,managedObjectContext:managedContext,sectionNameKeyPath: nil, cacheName: nil)
         do {
             try fetchedResultsController.performFetch()
         } catch let error as NSError {
