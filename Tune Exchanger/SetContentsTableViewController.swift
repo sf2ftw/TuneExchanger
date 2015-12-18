@@ -23,7 +23,7 @@ class SetContentsTableViewController: UITableViewController {
         static let TunebookEntity = "Tunebook"
         static let SetEntity = "Set"
         static let TuneEntity = "Tune"
-        static let SetCellId = "SetCell"
+        static let SetCellId = "Tune Cell"
         static let SegueToSetContents = "Show Set Contents"
     }
 
@@ -33,7 +33,7 @@ class SetContentsTableViewController: UITableViewController {
         let fetchRequest = NSFetchRequest(entityName: Constants.TuneEntity )
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
-        fetchRequest.predicate = NSPredicate(format: "set == %@", currentSet!)
+        fetchRequest.predicate = NSPredicate(format: "ANY settunes == %@", currentSet!)
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,managedObjectContext:managedContext,sectionNameKeyPath: nil, cacheName: nil)
         do {
             try fetchedResultsController.performFetch()

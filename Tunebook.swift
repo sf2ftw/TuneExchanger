@@ -32,7 +32,6 @@ class Tunebook: NSManagedObject {
                         let setData = Set(entity: SetEntity!, insertIntoManagedObjectContext: coreDataStack.context)
                         setData.title = set["title"].string
                         setData.tunebook = tunebookData
-                        
                         let tunebookContainingSet = tunebookData.set?.mutableCopy() as! NSMutableOrderedSet
                         tunebookContainingSet.addObject(setData)
                         tunebookData.set = tunebookContainingSet.copy() as? NSOrderedSet

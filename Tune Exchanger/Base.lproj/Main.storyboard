@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Tunebook-->
@@ -191,6 +192,8 @@
                             <outlet property="delegate" destination="x0T-Mv-Inr" id="aTp-ny-POn"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJ2-bd-eWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,10 +255,10 @@
             </objects>
             <point key="canvasLocation" x="945" y="-290"/>
         </scene>
-        <!--Tunes-->
+        <!--Set Contents-->
         <scene sceneID="gs2-vK-XXq">
             <objects>
-                <tableViewController id="uI7-bC-ggI" customClass="SetContentsTableViewController" customModule="Tune_Exchanger" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Set Contents" title="Set Contents" id="uI7-bC-ggI" customClass="SetContentsTableViewController" customModule="Tune_Exchanger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="28" sectionFooterHeight="28" id="zWx-56-zFN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -340,8 +343,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tunes" id="Okv-lW-evi">
-                        <barButtonItem key="leftBarButtonItem" title="Add" id="kIW-WS-9NW"/>
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="In9-85-91y"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Filter" id="In9-85-91y"/>
+                            <barButtonItem title="Add" id="kIW-WS-9NW"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9EK-Xt-Dr0" userLabel="First Responder" sceneMemberID="firstResponder"/>

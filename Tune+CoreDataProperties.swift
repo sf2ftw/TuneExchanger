@@ -25,7 +25,7 @@ extension Tune {
     @NSManaged var tuneKey: String?
     @NSManaged var tuneType: String?
     @NSManaged var url: String?
-    @NSManaged var settunes: Set?
+    @NSManaged var settunes: NSOrderedSet?
     @NSManaged var tunebook: NSOrderedSet?
 
 }
