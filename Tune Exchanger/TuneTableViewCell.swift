@@ -10,7 +10,22 @@ import UIKit
 
 class TuneTableViewCell: UITableViewCell {
 
-
+    var currentTune : Tune? {
+        didSet{
+            if currentTune!.title != nil {
+                titleLabel.text = currentTune!.title
+            }
+            if currentTune!.tuneKey != nil {
+                keyLabel.text = currentTune!.tuneKey
+            }
+            if currentTune!.tuneType != nil {
+                typeLabel.text = currentTune!.tuneType
+            }
+        }
+    }
+    
+    
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var keyLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!

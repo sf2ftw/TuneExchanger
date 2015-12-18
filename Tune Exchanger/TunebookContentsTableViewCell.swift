@@ -10,6 +10,8 @@ import UIKit
 
 class TunebookContentsTableViewCell: UITableViewCell {
 
+    var currentSet : Set?
+    
     @IBOutlet weak var title: UILabel!
     
     override func awakeFromNib() {

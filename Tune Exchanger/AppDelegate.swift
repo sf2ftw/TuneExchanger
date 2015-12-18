@@ -82,36 +82,7 @@ func importJSONTuneSeedDataIfNeeded() {
     }
 }
 
-func importJSONTuneSeedData() {
-    //just a test function to import some data from the json file to give me some test data
-    
-    let jsonURL = NSBundle.mainBundle().URLForResource("seedTunes", withExtension: "json")
-    let jsonData = NSData(contentsOfURL: jsonURL!)
-    
-    do {
-        let jsonArray = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: .AllowFragments) as! NSArray
-        let entity = NSEntityDescription.entityForName("Tune", inManagedObjectContext: coreDataStack.context)
-        
-        for jsonDictionary in jsonArray {
-            let tuneobj = Tune(entity: entity!, insertIntoManagedObjectContext: coreDataStack.context)
-            tuneobj.abc = (jsonDictionary["abc"] as! String)
-            tuneobj.comments = (jsonDictionary["comments"] as! String)
-            tuneobj.composer = (jsonDictionary["composer"] as! String)
-            tuneobj.importSource = (jsonDictionary["importSource"] as! String)
-            tuneobj.learningFlag = jsonDictionary["learningFlag"] as? Bool
-            tuneobj.timeSignature = (jsonDictionary["timeSignature"] as! String)
-            tuneobj.title = (jsonDictionary["title"] as! String)
-            tuneobj.tuneKey = (jsonDictionary["tuneKey"] as! String)
-            tuneobj.tuneType = (jsonDictionary["tuneType"] as! String)
-        }
-        
-        coreDataStack.saveContext()
-        print("Imported \(jsonArray.count) Tunes")
-        
-    } catch let error as NSError {
-        print("Error importing Tunes: \(error)")
-    }
-}
+
 }
 
 

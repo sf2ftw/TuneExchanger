@@ -15,6 +15,6 @@ import CoreData
 extension Tunebook {
     @NSManaged var contentDescription: String?
     @NSManaged var title: String?
-    @NSManaged var set: NSSet?
+    @NSManaged var set: NSOrderedSet?
     @NSManaged var tune: NSOrderedSet?
 }

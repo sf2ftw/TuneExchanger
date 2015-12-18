@@ -1,66 +1,73 @@
 //
-//  TunesTableViewController.swift
+//  SetContentsTableViewController.swift
 //  Tune Exchanger
 //
-//  Created by I.T. Support on 08/12/2015.
+//  Created by I.T. Support on 18/12/2015.
 //  Copyright © 2015 STV. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class TunesTableViewController: UITableViewController {
-
+class SetContentsTableViewController: UITableViewController {
+    
+    var currentSet : Set?
+    
     var managedContext: NSManagedObjectContext! //link to managed context
     
     var fetchedResultsController : NSFetchedResultsController!
     
+    
+    
     struct Constants {
-        static let tuneEntity = "Tune"
-        static let tuneCellID = "Tune Cell"
+        static let TunebookEntity = "Tunebook"
+        static let SetEntity = "Set"
+        static let TuneEntity = "Tune"
+        static let SetCellId = "SetCell"
+        static let SegueToSetContents = "Show Set Contents"
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let fetchRequest = NSFetchRequest(entityName: Constants.tuneEntity)
+        title = currentSet?.title
+        let fetchRequest = NSFetchRequest(entityName: Constants.TuneEntity )
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,managedObjectContext:managedContext, sectionNameKeyPath: nil, cacheName: nil)
-        
+        fetchRequest.predicate = NSPredicate(format: "set == %@", currentSet!)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,managedObjectContext:managedContext,sectionNameKeyPath: nil, cacheName: nil)
         do {
             try fetchedResultsController.performFetch()
         } catch let error as NSError {
             print("Error: \(error.localizedDescription)")
         }
+    }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return fetchedResultsController.sections!.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         let sectionInfo = fetchedResultsController.sections![section]
         return sectionInfo.numberOfObjects
+
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.tuneCellID, forIndexPath: indexPath) as! TuneTableViewCell
-        
-        let tune = fetchedResultsController.objectAtIndexPath(indexPath)
-            as! Tune
-        cell.currentTune = tune
-//        cell.titleLabel.text = tune.title
-//        cell.keyLabel.text = tune.tuneKey
-//        cell.typeLabel.text = tune.tuneType
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.SetCellId, forIndexPath: indexPath) as! TuneTableViewCell
+        let currentTune = fetchedResultsController.objectAtIndexPath(indexPath) as! Tune
+        //cell.currentTunebook = tunebook
+        //cell.title.text = set.title
+        cell.currentTune = currentTune
         return cell
+
     }
     
 

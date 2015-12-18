@@ -27,23 +27,24 @@ class Tunebook: NSManagedObject {
                 tunebookData.title = tunebook["title"].string
                 tunebookData.contentDescription = tunebook["contentDescription"].string
                 print("title = \(tunebookData.title!), description = \(tunebookData.contentDescription!)")
-                if let tunes = tunebook["tune"].array {
-                    //import tune but link back to tunebook entry
-                    for tune in tunes {
-                        let tuneData = Tune(entity: TuneEntity!, insertIntoManagedObjectContext: coreDataStack.context)
-                        tuneData.title = tune["title"].string
-                        print("Tune: \(tuneData.title!)")
-                    } //finished importing tunes directly in tunebook
-                }// end import if there are no tunes in tunebook
                 if let sets = tunebook["sets"].array {
                     for set in sets {
                         let setData = Set(entity: SetEntity!, insertIntoManagedObjectContext: coreDataStack.context)
                         setData.title = set["title"].string
+                        setData.tunebook = tunebookData
+                        
+                        let tunebookContainingSet = tunebookData.set?.mutableCopy() as! NSMutableOrderedSet
+                        tunebookContainingSet.addObject(setData)
+                        tunebookData.set = tunebookContainingSet.copy() as? NSOrderedSet
                         print("setTitle = \(setData.title!)")
                         let tunesInSet = set["tune"].array
                         for tuneInSet in tunesInSet! {
                             let tuneData = Tune(entity: TuneEntity!, insertIntoManagedObjectContext: coreDataStack.context)
                             tuneData.title = tuneInSet["title"].string
+                            //start of NSorderedSet nonsence
+                            let setContainingTune = setData.settunes?.mutableCopy() as! NSMutableOrderedSet
+                            setContainingTune.addObject(tuneData)
+                            setData.settunes = setContainingTune.copy() as? NSOrderedSet  //end of NSorderedSet nonsence
                             print("tuneInSetTitle = \(tuneData.title!)")
                         } //end tuneInSet loop
                     }//end sets import loop

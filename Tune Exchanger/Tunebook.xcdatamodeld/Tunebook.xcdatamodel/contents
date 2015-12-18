@@ -19,18 +19,16 @@
         <attribute name="tuneKey" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tuneType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="settunes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="settunes" inverseEntity="Set" syncable="YES"/>
-        <relationship name="tunebook" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Tunebook" inverseName="tune" inverseEntity="Tunebook" syncable="YES"/>
+        <relationship name="settunes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Set" inverseName="settunes" inverseEntity="Set" syncable="YES"/>
     </entity>
     <entity name="Tunebook" representedClassName=".Tunebook" syncable="YES">
         <attribute name="contentDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="set" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Set" inverseName="tunebook" inverseEntity="Set" syncable="YES"/>
-        <relationship name="tune" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Tune" inverseName="tunebook" inverseEntity="Tune" syncable="YES"/>
+        <relationship name="set" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Set" inverseName="tunebook" inverseEntity="Set" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Set" positionX="-342" positionY="-397" width="128" height="118"/>
-        <element name="Tune" positionX="36" positionY="-193" width="128" height="238"/>
-        <element name="Tunebook" positionX="-603" positionY="-58" width="128" height="103"/>
+        <element name="Set" positionX="-306" positionY="-216" width="128" height="118"/>
+        <element name="Tune" positionX="-45" positionY="-214" width="128" height="223"/>
+        <element name="Tunebook" positionX="-569" positionY="-216" width="128" height="88"/>
     </elements>
 </model>
