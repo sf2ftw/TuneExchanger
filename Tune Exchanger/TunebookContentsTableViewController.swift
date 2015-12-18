@@ -28,7 +28,7 @@ class TunebookContentsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = currentTunebook?.title
+        title = "\(currentTunebook!.title!) contents"
         let fetchRequest = NSFetchRequest(entityName: Constants.SetEntity )
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]

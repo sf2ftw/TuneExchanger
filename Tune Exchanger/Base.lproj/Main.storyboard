@@ -49,7 +49,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tunebook" id="RzS-y8-KCj">
-                        <barButtonItem key="leftBarButtonItem" title="Add" id="JB5-4V-abn"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="JB5-4V-abn"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubk-wc-n4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -64,9 +64,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="QBo-cS-WnF">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Tune Cell" rowHeight="93" id="Kph-gq-SQx" customClass="TuneTableViewCell" customModule="Tune_Exchanger" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="93"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kph-gq-SQx" id="bUf-mX-Md2">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="92"/>
@@ -144,15 +149,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tunes" id="3TC-2n-0Z9">
-                        <barButtonItem key="leftBarButtonItem" title="Add" id="Len-MI-9OG"/>
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="6B6-UT-ff7"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Filter" id="6B6-UT-ff7"/>
+                            <barButtonItem title="Add" id="Len-MI-9OG"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oag-Fm-gFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1675" y="-290"/>
         </scene>
-        <!--Tunebook Contents Table View Controller-->
+        <!--Tunebook Contents-->
         <scene sceneID="IsM-gT-ekH">
             <objects>
                 <tableViewController storyboardIdentifier="Sets" id="x0T-Mv-Inr" customClass="TunebookContentsTableViewController" customModule="Tune_Exchanger" customModuleProvider="target" sceneMemberID="viewController">
@@ -193,6 +200,9 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Tunebook Contents" id="3Nb-rB-nDB">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="PaW-TH-Lf6"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJ2-bd-eWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -342,11 +352,8 @@
                             <outlet property="delegate" destination="uI7-bC-ggI" id="ytC-Xe-aCp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tunes" id="Okv-lW-evi">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Filter" id="In9-85-91y"/>
-                            <barButtonItem title="Add" id="kIW-WS-9NW"/>
-                        </rightBarButtonItems>
+                    <navigationItem key="navigationItem" title="Set Contents" id="Okv-lW-evi">
+                        <barButtonItem key="rightBarButtonItem" image="play_icon" id="JZc-Ou-lFE"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9EK-Xt-Dr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -357,5 +364,6 @@
     <resources>
         <image name="folder_music" width="32" height="32"/>
         <image name="music_note" width="32" height="32"/>
+        <image name="play_icon" width="32" height="32"/>
     </resources>
 </document>
