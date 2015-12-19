@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Tunebook-->
@@ -56,7 +55,7 @@
             </objects>
             <point key="canvasLocation" x="1675" y="442"/>
         </scene>
-        <!--Tunes-->
+        <!--Tunes Table View Controller-->
         <scene sceneID="weL-KQ-jMQ">
             <objects>
                 <tableViewController id="pEu-gs-DT4" customClass="TunesTableViewController" customModule="Tune_Exchanger" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,6 +67,10 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Tune Cell" rowHeight="93" id="Kph-gq-SQx" customClass="TuneTableViewCell" customModule="Tune_Exchanger" customModuleProvider="target">
@@ -148,11 +151,20 @@
                             <outlet property="delegate" destination="pEu-gs-DT4" id="peD-eD-vCO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tunes" id="3TC-2n-0Z9">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Filter" id="6B6-UT-ff7"/>
-                            <barButtonItem title="Add" id="Len-MI-9OG"/>
-                        </rightBarButtonItems>
+                    <navigationItem key="navigationItem" id="3TC-2n-0Z9">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="6B6-UT-ff7"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="XYS-fy-XE9">
+                            <rect key="frame" x="179" y="7" width="243" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Name"/>
+                                <segment title="Type"/>
+                                <segment title="Key"/>
+                                <segment title="Time"/>
+                            </segments>
+                        </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="Len-MI-9OG"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oag-Fm-gFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,7 +190,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvT-qN-Xhn">
                                             <rect key="frame" x="8" y="0.0" width="584" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
