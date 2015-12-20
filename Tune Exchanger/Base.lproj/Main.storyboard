@@ -59,27 +59,21 @@
         <scene sceneID="weL-KQ-jMQ">
             <objects>
                 <tableViewController id="pEu-gs-DT4" customClass="TunesTableViewController" customModule="Tune_Exchanger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" id="YRn-Ml-Ibs">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="112" sectionHeaderHeight="28" sectionFooterHeight="28" id="YRn-Ml-Ibs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Tune Cell" rowHeight="81" id="Kph-gq-SQx" customClass="TuneTableViewCell" customModule="Tune_Exchanger" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="81"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Tune Cell" rowHeight="112" id="Kph-gq-SQx" customClass="TuneTableViewCell" customModule="Tune_Exchanger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="112"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kph-gq-SQx" id="bUf-mX-Md2">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" verticalHuggingPriority="251" tableViewCell="Kph-gq-SQx" id="bUf-mX-Md2">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="111"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2I-QZ-JHZ">
-                                            <rect key="frame" x="525" y="32" width="29" height="17"/>
+                                            <rect key="frame" x="525" y="47" width="29" height="17"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="key" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga0-cQ-wSC">
-                                            <rect key="frame" x="8" y="67" width="19" height="14"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -90,7 +84,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xn0-ms-IDB">
-                                            <rect key="frame" x="562" y="25" width="30" height="30"/>
+                                            <rect key="frame" x="562" y="41" width="30" height="30"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                             <state key="normal" title="•••">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,6 +93,12 @@
                                                 <action selector="showTuneActionSheet:" destination="pEu-gs-DT4" eventType="touchUpInside" id="Bf7-ar-t0E"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="key" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga0-cQ-wSC">
+                                            <rect key="frame" x="8" y="28" width="19" height="84"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Ga0-cQ-wSC" firstAttribute="leading" secondItem="MuC-Us-xhm" secondAttribute="leading" id="1Tf-Ig-vgR"/>
@@ -109,7 +109,7 @@
                                         <constraint firstItem="C2I-QZ-JHZ" firstAttribute="centerY" secondItem="bUf-mX-Md2" secondAttribute="centerY" id="arA-gg-Taz"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="MuC-Us-xhm" secondAttribute="leading" id="hRa-eT-zlG"/>
                                         <constraint firstAttribute="topMargin" secondItem="MuC-Us-xhm" secondAttribute="top" id="qq7-K7-n9a"/>
-                                        <constraint firstItem="Ga0-cQ-wSC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MuC-Us-xhm" secondAttribute="bottom" constant="8" id="zF9-bS-h84"/>
+                                        <constraint firstItem="Ga0-cQ-wSC" firstAttribute="top" secondItem="MuC-Us-xhm" secondAttribute="bottom" id="zF9-bS-h84"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">

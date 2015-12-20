@@ -53,6 +53,11 @@ class TunesTableViewController: UITableViewController {
             print("Delete")
         })
         
+        let addLearningListAction = UIAlertAction(title: "Add to Learning List", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Add to learning list")
+        })
+
         //
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
             (alert: UIAlertAction!) -> Void in
@@ -60,9 +65,11 @@ class TunesTableViewController: UITableViewController {
         })
         
         
+        
         // 4
         optionMenu.addAction(shareAction)
         optionMenu.addAction(deleteAction)
+        optionMenu.addAction(addLearningListAction)
         optionMenu.addAction(cancelAction)
         
         // 5
@@ -73,11 +80,7 @@ class TunesTableViewController: UITableViewController {
         
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        let mention = mentionsArray[indexPath.section]!.data[indexPath.row]
-//        switch mention {
-//        case .imageMedia(_, let ratio):
-//            return tableView.bounds.size.width / CGFloat(ratio)
-//        default:
+
         
         return UITableViewAutomaticDimension
         }
