@@ -38,6 +38,50 @@ class TunesTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    @IBAction func showTuneActionSheet(sender: AnyObject) {
+        // 1
+        let optionMenu = UIAlertController(title: nil, message: "tune", preferredStyle: .ActionSheet)
+        
+        // 2
+        let shareAction = UIAlertAction(title: "Share", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Share")
+        })
+        let deleteAction = UIAlertAction(title: "Delete Tune", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Delete")
+        })
+        
+        //
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Cancelled")
+        })
+        
+        
+        // 4
+        optionMenu.addAction(shareAction)
+        optionMenu.addAction(deleteAction)
+        optionMenu.addAction(cancelAction)
+        
+        // 5
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+    
+        
+        
+        
+    }
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        let mention = mentionsArray[indexPath.section]!.data[indexPath.row]
+//        switch mention {
+//        case .imageMedia(_, let ratio):
+//            return tableView.bounds.size.width / CGFloat(ratio)
+//        default:
+        
+        return UITableViewAutomaticDimension
+        }
+
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

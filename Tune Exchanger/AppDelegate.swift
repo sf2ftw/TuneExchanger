@@ -25,9 +25,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = tabBarController.viewControllers?.first as! UINavigationController
         let viewController1 = navigationController.topViewController as! TunebookTableViewController
         viewController1.managedContext = coreDataStack.context
-        let navigationControllerTunesLink = tabBarController.viewControllers?.last as! UINavigationController
+        
+        let navigationControllerTunesLink = tabBarController.viewControllers?[1] as! UINavigationController
         let viewController2 = navigationControllerTunesLink.topViewController as! TunesTableViewController
         viewController2.managedContext = coreDataStack.context
+        
+//        let navigationControllerVC3Link = tabBarController.viewControllers?[3] as! UINavigationController
+//        //let viewController2 = navigationControllerTunesLink.topViewController as!UIViewController
+//        navigationControllerVC3Link.managedContext = coreDataStack.context
+//        
+//        let navigationControllerVC4Link = tabBarController.viewControllers?.last as! UINavigationController
+//        let viewController2 = navigationControllerTunesLink.topViewController as! TunesTableViewController
+//        viewController2.managedContext = coreDataStack.context
+        
+        
         importJSONTuneSeedDataIfNeeded()
         importJSONTunebookSeedDataIfNeeded()
         return true
