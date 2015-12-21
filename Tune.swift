@@ -39,7 +39,22 @@ class Tune: NSManagedObject {
         } else {
         return false
         }
+    }
+    
+    class func deleteTune(tuneToDelete: Tune, managedContext: NSManagedObjectContext) -> Bool {
+        //give it a tune and it deletes it, returns bool if succesful   
+        managedContext.deleteObject(tuneToDelete)
+        do {
+            try managedContext.save()
+            return true
+        } catch let error as NSError {
+            print ("Count not save: \(error)")
+            return false
         }
     }
+    
+}
+    
+
 
 

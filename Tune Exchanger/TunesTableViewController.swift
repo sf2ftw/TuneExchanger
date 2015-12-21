@@ -15,15 +15,23 @@ class TunesTableViewController: UITableViewController {
     
     var fetchedResultsController : NSFetchedResultsController!
     
+    @IBOutlet weak var headerUIView: UIView!
+    
+    @IBOutlet weak var TableHeaderUIView: UIView!
+    
     struct Constants {
         static let tuneEntity = "Tune"
         static let tuneCellID = "Tune Cell"
     }
 
     
+    override func awakeFromNib() {
+   
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //self.tableView.tableHeaderView = "Header Cell"
         let fetchRequest = NSFetchRequest(entityName: Constants.tuneEntity)
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -37,48 +45,58 @@ class TunesTableViewController: UITableViewController {
 
     }
 
-    // MARK: - Table view data source
+
+    
+
+    @IBAction func touchOnHeader(sender: UITapGestureRecognizer) {
+        print("My header has been touched up!")
+    }
     
     @IBAction func showTuneActionSheet(sender: AnyObject) {
-        // 1
         let optionMenu = UIAlertController(title: nil, message: "tune", preferredStyle: .ActionSheet)
         
-        // 2
         let shareAction = UIAlertAction(title: "Share", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
             print("Share")
         })
         let deleteAction = UIAlertAction(title: "Delete Tune", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
-            print("Delete")
+            print("Delete Action Called")
+            self.deleteTune()
+            
         })
-        
         let addLearningListAction = UIAlertAction(title: "Add to Learning List", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
             print("Add to learning list")
         })
 
-        //
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
             (alert: UIAlertAction!) -> Void in
             print("Cancelled")
         })
-        
-        
-        
-        // 4
+    
         optionMenu.addAction(shareAction)
         optionMenu.addAction(deleteAction)
         optionMenu.addAction(addLearningListAction)
         optionMenu.addAction(cancelAction)
         
-        // 5
         self.presentViewController(optionMenu, animated: true, completion: nil)
-    
-        
-        
-        
     }
+    
+    func deleteTune()
+    {
+        let cell = view.superview as! TuneTableViewCell
+        let indexPath = fetchedResultsController.indexPathForObject(cell)
+        Tune.deleteTune(cell.currentTune!, managedContext: managedContext)
+        tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
+        print("fuck me, did it delete?")
+        
+
+    }
+    
+    // MARK: - Table view data source
+    
+    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 
         
@@ -104,13 +122,17 @@ class TunesTableViewController: UITableViewController {
         let tune = fetchedResultsController.objectAtIndexPath(indexPath)
             as! Tune
         cell.currentTune = tune
-//        cell.titleLabel.text = tune.title
-//        cell.keyLabel.text = tune.tuneKey
-//        cell.typeLabel.text = tune.tuneType
         return cell
     }
     
-
+    override func tableView(tableView: UITableView,
+        viewForHeaderInSection section: Int) -> UIView {
+        return headerUIView
+    }
+   
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
