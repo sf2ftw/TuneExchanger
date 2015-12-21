@@ -18,14 +18,17 @@ class TuneTableViewCell: UITableViewCell {
             if currentTune!.tuneKey != nil {
                 keyLabel.text = currentTune!.tuneKey
             }
+            else {
+            keyLabel.text = nil
+            }
             if currentTune!.tuneType != nil {
                 typeLabel.text = currentTune!.tuneType
+            } else {
+                typeLabel.text = nil
             }
         }
     }
-    
-    
-    
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var keyLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!

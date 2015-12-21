@@ -43,13 +43,11 @@ class TunebookContentsTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return fetchedResultsController.sections!.count
     }
 
@@ -63,7 +61,6 @@ class TunebookContentsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.SetCellId, forIndexPath: indexPath) as! TunebookContentsTableViewCell
         
         let set = fetchedResultsController.objectAtIndexPath(indexPath) as! Set
-        //cell.currentTunebook = tunebook
         cell.currentSet = set
         cell.title.text = set.title
         return cell
