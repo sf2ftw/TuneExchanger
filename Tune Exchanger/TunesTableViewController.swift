@@ -15,6 +15,8 @@ class TunesTableViewController: UITableViewController {
     
     var fetchedResultsController : NSFetchedResultsController!
     
+    var currentIndexPath : NSIndexPath?
+    
     @IBOutlet weak var headerUIView: UIView!
     
     @IBOutlet weak var TableHeaderUIView: UIView!
@@ -53,18 +55,18 @@ class TunesTableViewController: UITableViewController {
     }
     
     @IBAction func showTuneActionSheet(sender: AnyObject) {
+        let buttonPosition = sender.convertPoint(CGPointZero, toView: self.tableView)
+        currentIndexPath = self.tableView.indexPathForRowAtPoint(buttonPosition)
+        print("currentIndexPath = \(currentIndexPath!)")
+        
         let optionMenu = UIAlertController(title: nil, message: "tune", preferredStyle: .ActionSheet)
         
         let shareAction = UIAlertAction(title: "Share", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
             print("Share")
         })
-        let deleteAction = UIAlertAction(title: "Delete Tune", style: .Default, handler: {
-            (alert: UIAlertAction!) -> Void in
-            print("Delete Action Called")
-            self.deleteTune()
-            
-        })
+        let deleteAction = UIAlertAction(title: "Delete Tune", style: .Default, handler: deleteTune)
+        
         let addLearningListAction = UIAlertAction(title: "Add to Learning List", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
             print("Add to learning list")
@@ -83,13 +85,26 @@ class TunesTableViewController: UITableViewController {
         self.presentViewController(optionMenu, animated: true, completion: nil)
     }
     
-    func deleteTune()
+    func deleteTune(alert: UIAlertAction!)
     {
-        let cell = view.superview as! TuneTableViewCell
-        let indexPath = fetchedResultsController.indexPathForObject(cell)
-        Tune.deleteTune(cell.currentTune!, managedContext: managedContext)
-        tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
-        print("fuck me, did it delete?")
+        //let cell = view.superview as! TuneTableViewCell
+        //let indexPath = fetchedResultsController.indexPathForObject(cell)
+        let tuneToDelete = fetchedResultsController.objectAtIndexPath(currentIndexPath!) as! Tune
+        //Tune.deleteTune(tuneToDelete, managedContext: managedContext)
+        //fetchedResultsController.selector(
+        fetchedResultsController.delete(tuneToDelete)
+        managedContext.deleteObject(tuneToDelete)
+        do {
+                try managedContext.save()
+        } catch let error as NSError {
+            print ("Done fucked up")
+        }
+        
+        
+        
+        //tableView.deleteRowsAtIndexPaths([currentIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
+        
+                print("fuck me, did it delete?")
         
 
     }
