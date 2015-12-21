@@ -59,24 +59,27 @@
         <scene sceneID="weL-KQ-jMQ">
             <objects>
                 <tableViewController id="pEu-gs-DT4" customClass="TunesTableViewController" customModule="Tune_Exchanger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="20" rowHeight="112" sectionHeaderHeight="18" sectionFooterHeight="18" id="YRn-Ml-Ibs">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="5" rowHeight="112" sectionHeaderHeight="18" sectionFooterHeight="18" id="YRn-Ml-Ibs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <color key="sectionIndexColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="MIb-UX-CP7">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+ Add Tune" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHO-9l-ETL">
-                                    <rect key="frame" x="8" y="11" width="88" height="21"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="iwm-f1-8Bw">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="go"/>
+                                </searchBar>
                             </subviews>
                             <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                             <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstItem="iwm-f1-8Bw" firstAttribute="top" secondItem="MIb-UX-CP7" secondAttribute="top" id="GST-St-WUJ"/>
+                                <constraint firstItem="iwm-f1-8Bw" firstAttribute="leading" secondItem="MIb-UX-CP7" secondAttribute="leading" id="Mws-cu-MRt"/>
+                                <constraint firstAttribute="trailing" secondItem="iwm-f1-8Bw" secondAttribute="trailing" id="teY-uC-Uri"/>
+                            </constraints>
                             <connections>
                                 <outletCollection property="gestureRecognizers" destination="yFk-qJ-f3k" appends="YES" id="NhQ-nA-ZCM"/>
                             </connections>
@@ -159,8 +162,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tunes" id="3TC-2n-0Z9">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="ZpF-XR-cM7">
-                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <barButtonItem key="leftBarButtonItem" title="Sort" id="4Sk-4W-GmN"/>
+                        <barButtonItem key="rightBarButtonItem" title="＋" id="ZpF-XR-cM7">
+                            <color key="tintColor" red="0.27450980392156865" green="0.5607843137254902" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

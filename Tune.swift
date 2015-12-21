@@ -53,6 +53,17 @@ class Tune: NSManagedObject {
         }
     }
     
+    class func addTuneToLearningList(tuneToAdd: Tune, managedContext: NSManagedObjectContext) -> Bool {
+        tuneToAdd.learningFlag = true
+        do {
+            try managedContext.save()
+            return true
+        } catch let error as NSError {
+            print ("Count not save: \(error)")
+            return false
+        }
+    }
+    
 }
     
 

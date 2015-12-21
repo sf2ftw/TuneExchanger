@@ -19,7 +19,7 @@ class TuneTableViewCell: UITableViewCell {
                 keyLabel.text = currentTune!.tuneKey
             }
             else {
-            keyLabel.text = nil
+            keyLabel.text = " "
             }
             if currentTune!.tuneType != nil {
                 typeLabel.text = currentTune!.tuneType

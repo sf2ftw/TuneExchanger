@@ -27,12 +27,10 @@ class TunesTableViewController: UITableViewController, NSFetchedResultsControlle
     }
 
     override func awakeFromNib() {
-   
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let fetchRequest = NSFetchRequest(entityName: Constants.tuneEntity)
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -43,7 +41,6 @@ class TunesTableViewController: UITableViewController, NSFetchedResultsControlle
         } catch let error as NSError {
             print("Error: \(error.localizedDescription)")
         }
-
     }
 
     @IBAction func touchOnHeader(sender: UITapGestureRecognizer) {
@@ -61,10 +58,7 @@ class TunesTableViewController: UITableViewController, NSFetchedResultsControlle
             print("Share")
         })
         let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: deleteTune)
-        let addLearningListAction = UIAlertAction(title: "Add to Learning List", style: .Default, handler: {
-            (alert: UIAlertAction!) -> Void in
-            print("Add to learning list")
-        })
+        let addLearningListAction = UIAlertAction(title: "Add to Learning List", style: .Default, handler: addToLearningList)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
             (alert: UIAlertAction!) -> Void in
             print("Cancelled")
@@ -82,6 +76,16 @@ class TunesTableViewController: UITableViewController, NSFetchedResultsControlle
         let tuneToDelete = fetchedResultsController.objectAtIndexPath(currentIndexPath!) as! Tune
         Tune.deleteTune(tuneToDelete, managedContext: managedContext)
         print("Deleted tune")
+    }
+    
+    func addToLearningList(alert: UIAlertAction!)
+    {
+        let tuneToAddToLearningList = fetchedResultsController.objectAtIndexPath(currentIndexPath!) as! Tune
+        if Tune.addTuneToLearningList(tuneToAddToLearningList, managedContext: managedContext) == true {
+            print("Added \(tuneToAddToLearningList.title!) to the learning list")
+        } else {
+            print("\(tuneToAddToLearningList.title!) not added to the learning list")
+        }
     }
     
     // MARK: - Table view data source
