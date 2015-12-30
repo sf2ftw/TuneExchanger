@@ -9,17 +9,20 @@
 import UIKit
 import CoreData
 
-class TunesTableViewController: UITableViewController, NSFetchedResultsControllerDelegate{
+class TunesTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating{
 
     var managedContext: NSManagedObjectContext! //link to managed context
     
     var fetchedResultsController : NSFetchedResultsController!
+    var searchControllerfetchedResultsController : NSFetchedResultsController!
     
     var currentIndexPath : NSIndexPath?
     
-    @IBOutlet weak var headerUIView: UIView!
+    let searchController = UISearchController(searchResultsController: nil)
     
-    @IBOutlet weak var TableHeaderUIView: UIView!
+    //@IBOutlet weak var headerUIView: UIView!
+    
+    //@IBOutlet weak var TableHeaderUIView: UIView!
     
     struct Constants {
         static let tuneEntity = "Tune"
@@ -31,6 +34,8 @@ class TunesTableViewController: UITableViewController, NSFetchedResultsControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //set up searchController
+                //finish setting up the searchController
         let fetchRequest = NSFetchRequest(entityName: Constants.tuneEntity)
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -40,11 +45,14 @@ class TunesTableViewController: UITableViewController, NSFetchedResultsControlle
             try fetchedResultsController.performFetch()
         } catch let error as NSError {
             print("Error: \(error.localizedDescription)")
-        }
-    }
+        } //set up the search bar
+        
+        searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = true
+        searchController.dimsBackgroundDuringPresentation = true
+        searchController.searchBar.sizeToFit()
+        self.tableView.tableHeaderView = searchController.searchBar
 
-    @IBAction func touchOnHeader(sender: UITapGestureRecognizer) {
-        print("My header has been touched up!")
     }
     
     @IBAction func showTuneActionSheet(sender: AnyObject) {
@@ -88,20 +96,36 @@ class TunesTableViewController: UITableViewController, NSFetchedResultsControlle
         }
     }
     
+    // MARK:- Search delegate stuff
+
+    
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         tableView.estimatedRowHeight = 40
         return UITableViewAutomaticDimension
-        }
+    }
 
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return fetchedResultsController.sections!.count
+        if (self.searchController.active) {
+            return searchControllerfetchedResultsController.sections!.count
+        }
+        else {
+            return fetchedResultsController.sections!.count
+        }
+        //return fetchedResultsController.sections!.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         let sectionInfo = fetchedResultsController.sections![section]
+        if searchControllerfetchedResultsController != nil {
+        let searchSectionInfo = searchControllerfetchedResultsController.sections![section]
+            if (self.searchController.active) {
+                return searchSectionInfo.numberOfObjects
+            }
+        }
         return sectionInfo.numberOfObjects
     }
 
@@ -109,24 +133,32 @@ class TunesTableViewController: UITableViewController, NSFetchedResultsControlle
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.tuneCellID, forIndexPath: indexPath) as! TuneTableViewCell
         configureCell(cell, indexPath: indexPath)
-         return cell
+        return cell
     }
     
     func configureCell(cell: TuneTableViewCell, indexPath: NSIndexPath) {
-        let tune = fetchedResultsController.objectAtIndexPath(indexPath) as! Tune
-        cell.currentTune = tune
-       
+        if (self.searchController.active) {
+            let tune = searchControllerfetchedResultsController.objectAtIndexPath(indexPath) as! Tune
+            cell.currentTune = tune
+
+        }
+        else {
+            let tune = fetchedResultsController.objectAtIndexPath(indexPath) as! Tune
+            cell.currentTune = tune
+        }
+        
+        
+        
     }
     
-    override func tableView(tableView: UITableView,
+    /*override func tableView(tableView: UITableView,
         viewForHeaderInSection section: Int) -> UIView {
         return headerUIView
-    }
-   
+    }*/
 
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
+//    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return UITableViewAutomaticDimension
+//    }
     
     // MARK: NSFetchedResultsControllerDelegate
     
@@ -192,4 +224,26 @@ class TunesTableViewController: UITableViewController, NSFetchedResultsControlle
         tableView.endUpdates()
     }
     
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+        //filteredTableData.removeAll(keepCapacity: false)
+        if searchController.searchBar.text != nil {
+            //let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
+            let searchPredicate = NSPredicate(format: "title CONTAINS[c] %@", searchController.searchBar.text!)
+            print("predicate: \(searchPredicate)")
+            let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+            let fetchRequest = NSFetchRequest(entityName: Constants.tuneEntity)
+            fetchRequest.sortDescriptors = [sortDescriptor]
+            fetchRequest.predicate = searchPredicate
+            searchControllerfetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,managedObjectContext:managedContext, sectionNameKeyPath: nil, cacheName: nil)
+    //        searchControllerfetchedResultsController = self
+            do {
+                try searchControllerfetchedResultsController.performFetch()
+            } catch let error as NSError {
+                print("Error: \(error.localizedDescription)")
+            }
+            self.tableView.reloadData()
+        
+        }
+    }
 }
